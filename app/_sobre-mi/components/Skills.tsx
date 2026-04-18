@@ -1,6 +1,6 @@
 "use client";
-import dataTechnologies from "../data/technologies.json" assert { type: "json" };
-import abilities from "../data/abilities.json" assert { type: "json" };
+import dataTechnologies from "../data/technologies.json";
+import abilities from "../data/abilities.json";
 import React, { useState, useRef, useEffect } from "react";
 import { animate } from "animejs";
 import { icons } from "@/app/components/icons";
