@@ -17,12 +17,17 @@ import Supabase from "./supabase";
 import SQLite from "./sqlite";
 import Tailwind from "./tailwind";
 import TypeScript from "./typescript";
+import PostgreSQL from "./postgresql";
+import Postman from "./postman";
+import Figma from "./figma";
+import Trello from "./trello";
 
 
 export const icons: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   angular: Angular,
   bootstrap: Bootstrap,
   fastapi: FastAPI,
+  figma: Figma,
   git: Git,
   github: GitHub,
   instagram: Instagram,
@@ -33,13 +38,16 @@ export const icons: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   mysql: MySQL,
   nextjs: NextJS,
   nodejs: NodeJS,
+  postgresql: PostgreSQL,
+  postman: Postman,
   python: Python,
   react: React,
   supabase: Supabase,
   sqlite: SQLite,
   tailwind: Tailwind,
+  trello: Trello,
   typescript: TypeScript,
 };
 
 // Export individual components
-export { Angular, FastAPI, Git, GitHub, Instagram, JavaScript, LinkedIn, MongoDB, MySQL, NextJS, NodeJS, Python, React, Tailwind, TypeScript };
+export { Angular, FastAPI, Figma, Git, GitHub, Instagram, JavaScript, LinkedIn, MongoDB, MySQL, NextJS, NodeJS, PostgreSQL, Postman, Python, React, Tailwind, Trello, TypeScript };

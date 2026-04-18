@@ -27,7 +27,7 @@ export default function TechTag({ name, size = "md" }: TechTagProps) {
     <>
       <div className={`flex w-auto items-center bg-background-gray rounded-4xl ${sizeClasses[size]}`}>
         {Icon && <Icon className={iconSize[size]} />}
-        <p className="flex items-baseline">{name}</p>
+        <p className="flex items-baseline select-none">{name}</p>
       </div>
     </>
   );

@@ -1,9 +1,9 @@
 "use client";
 
-import ProjectsPage from "./proyectos/page";
-import HeroPage from "./hero/page";
-import AboutMePage from "./sobre-mi/page";
-import TechStack from "./tech-stack/TechStack";
+import ProjectsPage from "./_proyectos/Projects";
+import HeroPage from "./_hero/Hero";
+import AboutMePage from "./_sobre-mi/AboutMe";
+import TechStack from "./_tech-stack/TechStack";
 
 export default function Home() {
   return (

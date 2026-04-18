@@ -15,9 +15,9 @@ export default function ProjectCard({ imageURL, title, techs }: ProjectCardProps
             <Image src={imageURL} alt={imageURL} width={500} height={300} className="w-full h-full object-cover blackscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none"></div>
         </div>
-        <div className="pl-2 space-y-1 mt-4">
+        <div className="pl-2 space-y-1 mt-2">
           <h3 className="text-xl px-2">{title}</h3>
-          <div className="flex space-x-2 overflow-hidden">
+          <div className="flex px-2 space-x-2 overflow-hidden">
             {techs.map((tech, i) => (
               <div key={i} className="shrink-0">
                 <TechTag name={tech} size="sm" />

@@ -84,35 +84,34 @@ export default function Navbar() {
   // Efecto de scroll y Scroll Spy para actualizar automáticamente el activeHash
   useEffect(() => {
     const handleScroll = () => {
-      setIsFixed(window.scrollY > 50);
+      const scrollPos = window.scrollY;
+      setIsFixed(scrollPos > 50);
 
-      // Scroll Spy Fallback para "Home" si estamos hasta arriba
-      if (window.scrollY < 300) {
-        setActiveHash("/");
+      // IDs de las secciones. El orden importa: evalúamos de abajo hacia arriba.
+      // Se activa la sección cuando scrolleamos pasándola o estando muy cerca de ella.
+      const checkIds = ["sobre-mi", "proyectos"];
+      let active = "/";
+
+      for (const id of checkIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          // Si hemos pasado el top de la sección (con un margen visual)
+          if (scrollPos >= el.offsetTop - 200) {
+            active = `/#${id}`;
+            break;
+          }
+        }
       }
+
+      setActiveHash(active);
     };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveHash(`/#${entry.target.id}`);
-          }
-        });
-      },
-      { rootMargin: "-40% 0px -40% 0px" } // Gatilla a la mitad de la pantalla
-    );
-
-    const checkIds = ["proyectos", "sobre-mi"];
-    checkIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
     window.addEventListener("scroll", handleScroll);
+    // Ejecutar una vez al inicio
+    handleScroll();
+    
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      observer.disconnect();
     };
   }, []);
 
