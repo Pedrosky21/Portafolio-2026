@@ -26,19 +26,19 @@ export default function ContactModal({ onClose }: ContactModelProps) {
             </div>
             <p className="text-light-gray">CONTACTO</p>
           </div>
-          <button onClick={() => onClose()} className="text-red-700 cursor-pointer">
+          <button onClick={() => onClose()} className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-500 hover:bg-almost-black hover:text-white transition-all duration-300 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth="1.5"
+              strokeWidth="2"
               stroke="currentColor"
-              className="size-10"
+              className="size-5"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                d="M6 18 18 6M6 6l12 12"
               />
             </svg>
           </button>

@@ -8,13 +8,24 @@ import LinkedInIcon from "../components/icons/linkedin";
 import ProjectModal from "../components/projects/ProjectModal";
 import ProjectList from "../components/projects/ProyectList";
 import Navbar from "../components/Navbar";
-import { useRef, useState } from "react";
-import { animate } from "animejs";
+import { useRef, useState, useEffect } from "react";
+import { animate, stagger } from "animejs";
 
 export default function HeroPage() {
   const [showModal, setShowModal] = useState(false);
   const [projectToShow, setProjectToShow] = useState(0);
   const [showContactModal, setShowContact] = useState(false);
+
+  useEffect(() => {
+    animate(".hero-role-word", {
+      translateY: [20, 0],
+      opacity: [0, 1],
+      filter: ["blur(10px)", "blur(0px)"],
+      duration: 500,
+      ease: "easeOutExpo",
+      delay: stagger(40, { start: 20 }),
+    });
+  }, []);
 
   const projects = [
     {
@@ -31,7 +42,7 @@ export default function HeroPage() {
     {
       imageURL: "/ProyectoHackaton2.jpeg",
       title: "Hackaton Santex 2025",
-      techs: ["React", "Tailwind", "FastAPI"],
+      techs: ["React", "FastAPI"],
     },
   ];
 
@@ -39,7 +50,7 @@ export default function HeroPage() {
     {
       title: "Crumbs & Beans",
       description:
-        "Aplicación web desarrollada por mí que simula una tienda de café. Permite crear perfiles de usuario, agregar productos al carrito y realizar pedidos, con su historial. Utilicé Angular v19 con las últimas características como signals para la gestión del estado y optimización del rendimiento.",
+        "Aplicación web desarrollada por mí que simula una tienda de café online. Permite crear cuentas, agregar productos al carrito y realizar pedidos con historial de compras. Desarrollada con Angular 19 utilizando signals para mejorar el rendimiento y la gestión del estado.",
       imageURL: "/ProyectoCrumbsBeans.jpg",
       techs: ["Angular", "Tailwind", "Supabase"],
       githubLink: "",
@@ -47,7 +58,7 @@ export default function HeroPage() {
     {
       title: "Padel App",
       description:
-        "Aplicación web desarrollada en equipo bajo metodologías ágiles para la gestión de partidos de pádel. Permite crear perfiles, buscar y unirse a partidos y reservar canchas. Los administradores de clubes pueden gestionar turnos y canchas y la organización interna del club.\nIncluye autenticación, administración de disponibilidad por parte de clubes y un panel para la gestión interna de turnos y reservas.",
+        "Aplicación web para organizar partidos de pádel. Permite crear perfiles, buscar y unirse a partidos, reservar canchas y gestionar turnos. Los clubes cuentan con un panel para administrar disponibilidad, reservas y canchas.",
       imageURL: "/ProyectoPadel2.png",
       techs: ["Angular", "Tailwind", "NodeJS", "MySQL"],
       githubLink: "",
@@ -55,7 +66,7 @@ export default function HeroPage() {
     {
       title: "Padel IA - Hackaton Santex 2025",
       description:
-        "Solución con IA desarrollada en equipo durante 24 horas para la hackaton de Santex. La aplicación utiliza inteligencia artificial para facilitar el matchmaking a través de un sistema de recomendaciones basado en las preferencias y habilidades de los usuarios. Logramos quedar en el top 5 de 35 equipos participantes.",
+        "Aplicación con IA desarrollada en equipo durante una hackathon de 24 horas. Utiliza recomendaciones inteligentes para conectar jugadores según sus preferencias y nivel. El proyecto quedó en el top 5 entre 35 equipos.",
       imageURL: "/ProyectoHackaton2.jpeg",
       techs: ["React", "Tailwind", "FastAPI"],
       githubLink: "",
@@ -134,7 +145,7 @@ export default function HeroPage() {
     if (!outline) return;
     const outlineAnimation = animate(outline, {
       autoplay: false,
-      width: "48px",
+      width: "54px",
       duration: 600,
       onComplete: (self) => {
         setTimeout(() => {
@@ -193,21 +204,20 @@ export default function HeroPage() {
           <Navbar></Navbar>
           <button
             onClick={() => setShowContact(true)}
-            className="group absolute z-10 top-0 right-10 mt-8 bg-almost-black p-4 px-8 text-white rounded-full cursor-pointer hidden 2xl:flex items-center gap-2 transition-all duration-300 hover:bg-foreground-green shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.15)]"
+            className="group absolute z-10 top-0 right-4 mt-6 bg-almost-black p-5 px-10 text-white rounded-full cursor-pointer hidden 2xl:flex items-center gap-2 hover:scale-105 hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out"
           >
             <p className="font-medium tracking-wide">Contactame</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+              <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
+            </svg>
           </button>
         </div>
-        <div className="hidden md:flex mt-5 ml-4">
-          <div className="h-60 w-full">
-            <div className="2xl:w-5/8 rounded-4xl flex bg-white">
-              <div className="z-10">
-                <ProjectList
-                  projects={projects}
-                  sendProjectIndex={handleModal}
-                ></ProjectList>
-              </div>
-            </div>
+        <div className="h-60 md:flex mt-5 ml-4">
+          <div className="absolute z-10 h-60 w-full z-10">
+            <ProjectList
+              projects={projects}
+              sendProjectIndex={handleModal}
+            ></ProjectList>
           </div>
         </div>
         <div className="flex">
@@ -221,8 +231,12 @@ export default function HeroPage() {
               />
             </div>
             <div className="flex md:items-baseline justify-between mr-0 lg:mr-10">
-              <h1 className="text-center text-5xl md:text-6xl font-normal">
-                Pedro Arreguez
+              <h1 className="text-center text-5xl md:text-6xl font-normal flex flex-wrap gap-x-3 justify-center md:justify-start">
+                {"Pedro Arreguez".split(" ").map((word, i) => (
+                  <span key={`name-${i}`} className="hero-role-word opacity-0 inline-block">
+                    {word}
+                  </span>
+                ))}
               </h1>
               <div className="hidden md:flex h-10 w-auto space-x-10">
                 <div className="board">
@@ -253,8 +267,12 @@ export default function HeroPage() {
                 </div>
               </div>
             </div>
-            <h2 className="text-4xl md:text-5xl text-light-gray">
-              Desarrollador de Software Jr
+            <h2 className="text-4xl md:text-5xl text-light-gray flex flex-wrap gap-x-3 overflow-hidden py-1">
+              {"Desarrollador de Software".split(" ").map((word, i) => (
+                <span key={i} className="hero-role-word opacity-0 inline-block">
+                  {word}
+                </span>
+              ))}
             </h2>
             <div className="flex md:hidden w-full justify-end mt-4">
               <div className="flex h-10 w-auto space-x-10">
@@ -294,25 +312,24 @@ export default function HeroPage() {
         <a
           download
           href="/CV Pedro Arreguez.pdf"
-          className="flex space-x-4 w-48 items-center absolute z-20 bottom-20 right-5 bg-almost-black p-2 text-white rounded-4xl no-underline hover:bg-foreground-green hover:shadow-[0_8px_30px_rgb(0,0,0,0.15)]"
+          className="flex space-x-8 w-32 h-14 items-center absolute z-20 bottom-22 right-5 bg-almost-black py-2 px-3 text-white rounded-4xl no-underline hover:scale-105 hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-out"
           onClick={handleClick}
           ref={outlineRef}
         >
           <div
             ref={circleRef}
-            className="p-2 rounded-full text-white"
+            className="rounded-full bg-white text-black p-2"
           >
             {icon}
           </div>
           <p id="text" ref={textRef}>
-            Descargar CV
+            CV
           </p>
         </a>
       </div>
       <div
-        className={`fixed inset-0 backdrop-blur-2xl flex justify-center items-center w-full h-full z-50 ${
-          showModal ? "" : "hidden"
-        }`}
+        className={`fixed inset-0 backdrop-blur-2xl flex justify-center items-center w-full h-full z-50 ${showModal ? "" : "hidden"
+          }`}
       >
         <div className="w-1/3">
           <ProjectModal

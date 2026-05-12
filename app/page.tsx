@@ -10,8 +10,8 @@ export default function Home() {
     <>
       <div className="">
         <HeroPage></HeroPage>
-        <TechStack></TechStack>
         <ProjectsPage></ProjectsPage>
+        <TechStack></TechStack>
         <AboutMePage></AboutMePage>
       </div>
     </>

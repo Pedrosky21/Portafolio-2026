@@ -25,12 +25,10 @@ export default function AboutMePage() {
               <h2 className="text-4xl md:text-5xl font-light tracking-tight text-almost-black uppercase mb-4">Sobre mí</h2>
               <div className="w-16 h-1 bg-almost-black rounded-full mb-6"></div>
               <p className="text-lg text-light-gray leading-relaxed mb-4">
-                ¡Hola! Soy <strong className="text-almost-black font-medium">Pedro Arreguez</strong>, un desarrollador apasionado por crear interfaces dinámicas, atractivas y altamente funcionales.
-                Me encanta transformar ideas en experiencias digitales que conectan con los usuarios.
+                ¡Hola! Soy <strong className="text-almost-black font-medium">Pedro Arreguez</strong>, desarrollador Full Stack especializado en crear aplicaciones web modernas, rápidas y atractivas. Trabajo tanto en frontend como backend, enfocándome en desarrollar soluciones funcionales, escalables y con una buena experiencia de usuario.
               </p>
               <p className="text-lg text-light-gray leading-relaxed">
-                Siendo desarrollador Full Stack, mi objetivo siempre es escribir código limpio y optimizado,
-                asegurando que el backend apoye fuertemente el impacto visual del frontend.
+                Me gusta transformar ideas en productos reales mediante código limpio, interfaces dinámicas y una comunicación clara durante todo el proceso de desarrollo.
               </p>
             </div>
 
