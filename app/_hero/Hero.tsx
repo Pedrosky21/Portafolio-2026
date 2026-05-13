@@ -198,8 +198,8 @@ export default function HeroPage() {
   };
 
   return (
-    <div className="w-full md:h-dvh pr-2 flex relative 2xl:overflow-hidden">
-      <div className="w-full 2xl:w-3/5">
+    <div className="w-full min-h-[100dvh] md:h-dvh pr-2 flex relative 2xl:overflow-hidden pb-10 md:pb-0">
+      <div className="w-full 2xl:w-3/5 flex flex-col justify-start md:justify-start">
         <div className="2xl:w-full flex justify-center md:justify-start mt-5 ml-2">
           <Navbar></Navbar>
           <button
@@ -212,26 +212,28 @@ export default function HeroPage() {
             </svg>
           </button>
         </div>
-        <div className="h-60 md:flex mt-5 ml-4">
-          <div className="absolute z-10 h-60 w-full z-10">
+        <div className="hidden md:flex h-60 mt-5 ml-4">
+          <div className="absolute z-10 h-60 w-full">
             <ProjectList
               projects={projects}
               sendProjectIndex={handleModal}
             ></ProjectList>
           </div>
         </div>
-        <div className="flex">
-          <div className="w-full flex flex-col space-y-4 pl-2 sm:pl-5 mt-5">
-            <div className="w-full sm:hidden relative h-96">
+        <div className="flex px-2 sm:px-0 my-auto sm:my-0">
+          <div className="w-full flex flex-col space-y-4 sm:pl-5 mt-5 sm:mt-5 bg-white sm:bg-transparent rounded-[2.5rem] sm:rounded-none p-5 sm:p-0 shadow-[0_0_30px_rgba(0,0,0,0.08)] sm:shadow-none border border-gray-200 sm:border-none mb-6 sm:mb-0">
+            {/* Mobile Photo */}
+            <div className="w-full sm:hidden relative h-[22rem] rounded-[2rem] overflow-hidden mb-2">
               <Image
                 src="/yo3.jpeg"
                 alt="Foto de Perfil"
                 fill
-                className="rounded-4xl object-cover"
+                className="object-cover"
               />
             </div>
-            <div className="flex md:items-baseline justify-between mr-0 lg:mr-10">
-              <h1 className="text-center text-5xl md:text-6xl font-normal flex flex-wrap gap-x-3 justify-center md:justify-start">
+
+            <div className="flex md:items-baseline px-4 pt-4 md:p-0 justify-between mr-0 lg:mr-10">
+              <h1 className="text-left text-4xl md:text-6xl font-normal flex flex-wrap gap-x-3 justify-start md:justify-start">
                 {"Pedro Arreguez".split(" ").map((word, i) => (
                   <span key={`name-${i}`} className="hero-role-word opacity-0 inline-block">
                     {word}
@@ -267,19 +269,22 @@ export default function HeroPage() {
                 </div>
               </div>
             </div>
-            <h2 className="text-4xl md:text-5xl text-light-gray flex flex-wrap gap-x-3 overflow-hidden py-1">
+
+            <h2 className="text-left text-3xl px-4 md:p-0 md:text-5xl text-light-gray flex flex-wrap gap-x-3 justify-start md:justify-start overflow-hidden py-1">
               {"Desarrollador de Software".split(" ").map((word, i) => (
                 <span key={i} className="hero-role-word opacity-0 inline-block">
                   {word}
                 </span>
               ))}
             </h2>
-            <div className="flex md:hidden w-full justify-end mt-4">
-              <div className="flex h-10 w-auto space-x-10">
-                <div className="board">
+
+            {/* Mobile Socials */}
+            <div className="flex w-full justify-end sm:hidden mt-4 mb-2">
+              <div className="flex h-auto w-auto">
+                <div className="board scale-90 origin-right">
                   <a
                     href="https://github.com/Pedrosky21"
-                    className="key flex p-4 transition-all duration-100 hover:text-light-gray"
+                    className="key flex p-4 transition-all duration-100 hover:text-slate-700"
                     id="githubIcon"
                     target="_blank"
                   >
@@ -304,6 +309,7 @@ export default function HeroPage() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
