@@ -170,14 +170,17 @@ export default function Navbar() {
   };
 
   return (
-    <div
-      className={`
-        w-max rounded-full transition-all duration-300
-        ${isFixed
-          ? "fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-white/70 backdrop-blur-lg shadow-md border border-gray-200"
-          : "relative z-10 bg-white shadow-md border border-gray-200/50"}
-      `}
-    >
+    <>
+      {/* Spacer to prevent layout jump when navbar becomes fixed */}
+      {isFixed && <div className="h-[52px] sm:h-[56px] w-full" aria-hidden="true" />}
+      <div
+        className={`
+          w-max rounded-full transition-all duration-300
+          ${isFixed
+            ? "fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-white/70 backdrop-blur-lg shadow-md border border-gray-200"
+            : "relative z-10 bg-white shadow-md border border-gray-200/50"}
+        `}
+      >
       <nav ref={navRef} className="flex justify-between items-center relative z-0 p-1.5 gap-2">
         {/* Magic Sliding Background Pill con Soft Shadow */}
         <div
@@ -215,6 +218,7 @@ export default function Navbar() {
           );
         })}
       </nav>
-    </div>
+      </div>
+    </>
   );
 }
