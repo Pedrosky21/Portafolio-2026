@@ -83,7 +83,7 @@ export default function ProjectList({ projects, sendProjectIndex }: ProjectListP
             <button
               key={dotIndex}
               onClick={() => handleDotClick(dotIndex)}
-              className={`h-3 rounded-full transition-all duration-300 ${(currentIndex % projects.length) === dotIndex ? "w-8 bg-gray-600" : "w-3 bg-gray-400"
+              className={`cursor-pointer h-3 rounded-full transition-all duration-300 ${(currentIndex % projects.length) === dotIndex ? "w-8 bg-gray-600" : "w-3 bg-gray-400"
                 }`}
             ></button>
           ))}

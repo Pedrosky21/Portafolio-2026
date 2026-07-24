@@ -17,6 +17,7 @@ export default function ProjectCard({ imageURL, title, techs, isSmall, disableTr
           src={imageURL}
           alt={title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className={`object-cover ${disableTransition ? '' : 'transition-all duration-700'} ${isSmall ? 'opacity-70 group-hover:opacity-100' : 'opacity-100 group-hover:scale-110'}`}
         />
         

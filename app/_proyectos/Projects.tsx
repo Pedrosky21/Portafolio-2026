@@ -9,6 +9,7 @@ export default function ProjectsPage() {
       description2:
         "Permite crear perfiles, buscar y unirse a partidos y reservar canchas. Los administradores de clubes pueden gestionar turnos y canchas y la organización interna del club.\nIncluye autenticación, administración de disponibilidad por parte de clubes y un panel para la gestión interna de turnos y reservas.",
       imgSrc: "/ProyectoCrumbsBeans.jpg",
+      imgMobileSrc: "/ProyectoCrumbsBeansMobile.jpg",
       techs: ["Angular", "Bootstrap", "Supabase"],
       githubLink: "https://github.com/Pedrosky21/Crumbs-Beans",
       demo: "https://crumbs-beans.netlify.app/",
@@ -46,7 +47,10 @@ export default function ProjectsPage() {
       githubLink: "https://github.com/Pedrosky21/LyzeWhats-Back",
       demo: "https://lyze-whats.vercel.app/",
     },
-    {
+  ];
+
+  /*
+      {
       title: "Study Track",
       description1:
         "Aplicación Full Stack diseñada para organizar y realizar seguimiento de los temas de estudio de mis materias.",
@@ -57,11 +61,11 @@ export default function ProjectsPage() {
       githubLink: "https://github.com/Pedrosky21/Study-Tracker-Front",
       demo: "",
     },
-  ];
+  */
 
   return (
     <>
-      <div id="proyectos" className="w-full flex flex-col items-center pt-20">
+      <div id="proyectos" className="w-full flex flex-col items-center pt-20 pb-10">
         <div className="w-full px-6 max-w-[1500px]">
           <div className="w-full md:w-2/5">
             <h2 className="text-3xl md:text-5xl  text-background-blue">
@@ -80,6 +84,7 @@ export default function ProjectsPage() {
                   description1={proj.description1}
                   description2={proj.description2}
                   imgSrc={proj.imgSrc}
+                  imgMobileSrc={proj.imgMobileSrc || ""}
                   techs={proj.techs}
                   githubLink={proj.githubLink}
                   demo={proj.demo}

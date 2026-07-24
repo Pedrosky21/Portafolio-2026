@@ -220,14 +220,15 @@ export default function HeroPage() {
             ></ProjectList>
           </div>
         </div>
-        <div className="flex px-2 sm:px-0 my-auto sm:my-0">
-          <div className="w-full flex flex-col space-y-3 sm:space-y-4 sm:pl-5 mt-4 sm:mt-5 bg-white sm:bg-transparent rounded-[2rem] sm:rounded-none p-4 sm:p-0 shadow-[0_0_30px_rgba(0,0,0,0.08)] sm:shadow-none border border-gray-200 sm:border-none mb-4 sm:mb-0">
+        <div className="flex px-2 md:px-0 my-auto md:my-0">
+          <div className="w-full flex flex-col space-y-3 md:space-y-4 md:pl-5 mt-4 md:mt-5 bg-white sm:bg-transparent rounded-[2rem] sm:rounded-none p-4 sm:p-0 shadow-[0_0_30px_rgba(0,0,0,0.08)] sm:shadow-none border border-gray-200 sm:border-none mb-4 sm:mb-0">
             {/* Mobile Photo */}
-            <div className="w-full sm:hidden relative h-[24rem] rounded-[1.5rem] overflow-hidden mb-1">
+            <div className="w-full sm:w-90 md:hidden relative h-[24rem] rounded-[1.5rem] overflow-hidden mb-1">
               <Image
                 src="/yo3.jpeg"
                 alt="Foto de Perfil"
                 fill
+                sizes="(max-width: 640px) 100vw, 50vw"
                 className="object-cover object-[center_top]"
               />
             </div>
@@ -279,7 +280,7 @@ export default function HeroPage() {
             </h2>
 
             {/* Mobile Socials */}
-            <div className="flex w-full justify-end sm:hidden mt-2 mb-1">
+            <div className="flex w-full justify-end md:hidden mt-2 mb-1">
               <div className="flex h-auto w-auto">
                 <div className="board scale-90 origin-right">
                   <a

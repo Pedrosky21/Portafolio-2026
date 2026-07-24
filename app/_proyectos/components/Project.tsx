@@ -1,11 +1,12 @@
 import Image from "next/image";
-import TechIcosList from "./TechIconsList";
+import TechIconsList from "./TechIconsList";
 
 interface ProjectProps {
   title: string;
   description1: string;
   description2: string;
   imgSrc: string;
+  imgMobileSrc?: string;
   techs: string[];
   githubLink: string;
   demo?: string;
@@ -16,6 +17,7 @@ export default function Project({
   description1,
   description2,
   imgSrc,
+  imgMobileSrc,
   techs,
   githubLink,
   demo,
@@ -24,10 +26,21 @@ export default function Project({
     <>
       <div className="mb-0 h-full flex flex-col">
         <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-black/5 group shadow-sm">
-          <img src={imgSrc} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <img
+            src={imgSrc}
+            alt={title}
+            className={`w-full h-full object-cover transition-all duration-500 ${imgMobileSrc ? "group-hover:opacity-0" : "group-hover:scale-105"}`}
+          />
+          {imgMobileSrc && (
+            <img
+              src={imgMobileSrc}
+              alt={`${title} Mobile`}
+              className="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-500 group-hover:opacity-100"
+            />
+          )}
           {techs && techs.length > 0 && (
             <div className="absolute bottom-3 right-3 h-10 px-1 bg-almost-black/70 backdrop-blur-md rounded-lg flex items-center shadow-md sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
-              <TechIcosList techs={techs} />
+              <TechIconsList techs={techs} />
             </div>
           )}
         </div>

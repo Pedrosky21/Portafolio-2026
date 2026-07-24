@@ -47,6 +47,7 @@ export default function ProjectModal({
           alt={project.title}
           src={project.imageURL}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="rounded-t-[2rem] object-cover"
         />
       </div>
