@@ -12,14 +12,14 @@ export default function Skills() {
   }>(dataTechnologies[0]);
 
   const technologies = [
-    "python",
-    "javascript",
-    "nextjs",
     "angular",
+    "typescript",
+    "nextjs",
+    "python",
     "nodejs",
     "github",
     "mysql",
-    "mongodb",
+    "javascript"
   ];
 
   const showTechnology = (tech: string) => {
@@ -37,6 +37,9 @@ export default function Skills() {
     switch (tech) {
       case "python":
         color = "text-green-500";
+        break;
+      case "typescript":
+        color = "text-blue-500";
         break;
       case "javascript":
         color = "text-yellow-300";
@@ -77,7 +80,7 @@ export default function Skills() {
         <div className="relative z-10 flex flex-col h-full">
           <div className="flex flex-col sm:flex-row items-center sm:items-baseline justify-between mb-3 pb-2 border-b border-foreground-green/50">
             <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-2 sm:mb-0">
-              Skills
+              Skills destacadas
             </h2>
             <div className="flex bg-foreground-green/50 rounded-full p-1 border border-foreground-green/60 shadow-inner">
               <button

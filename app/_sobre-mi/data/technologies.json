@@ -2,11 +2,14 @@
   {
     "title": "Python",
     "description": [
-      "Dominio del lenguaje y su sintaxis",
-      "Manejo de estructuras de datos como listas, diccionarios y sets",
-      "Programación orientada a objetos (POO) y funciones de orden superior",
-      "Lectura/escritura de archivos",
-      "Uso de bibliotecas como pandas, numpy y os"
+      "Desarrollo de APIs REST y servicios backend con Python y FastAPI",
+      "Diseño de arquitecturas modulares y separación de responsabilidades",
+      "Implementación de endpoints, validación de datos y serialización con Pydantic",
+      "Integración con bases de datos relacionales mediante SQLAlchemy y SQL",
+      "Implementación de autenticación y autorización en APIs",
+      "Programación orientada a objetos y aplicación de patrones de diseño",
+      "Procesamiento y análisis de datos con Pandas y NumPy",
+      "Desarrollo de aplicaciones asíncronas utilizando async/await"
     ]
   },
   {
@@ -23,6 +26,17 @@
     ]
   },
   {
+    "title": "Typescript",
+    "description": [
+      "Desarrollo de aplicaciones tipadas y escalables con TypeScript",
+      "Diseño de interfaces, tipos personalizados y tipos genéricos",
+      "Aplicación de tipado avanzado para reducir errores y mejorar la mantenibilidad",
+      "Integración con frameworks y librerías como Angular, React y Node.js",
+      "Uso de módulos, enums, utility types y type guards",
+      "Aplicación de principios SOLID y patrones de diseño en proyectos full stack"
+    ]
+  },
+  {
     "title": "NextJS",
     "description": [
       "Desarrollo de aplicaciones web con arquitectura basada en rutas de archivos (App Router y Pages Router)",
@@ -36,14 +50,15 @@
   {
     "title": "Angular",
     "description": [
-      "Desarrollo de aplicaciones SPA con arquitectura basada en componentes",
-      "Uso de TypeScript para programación tipada y estructurada",
-      "Gestión de rutas con Angular Router",
-      "Consumo de servicios HTTP y manejo de observables con RxJS",
-      "Creación de servicios e inyección de dependencias (DI)",
-      "Implementación de formularios reactivos y validaciones",
-      "Uso de pipes personalizados y directivas estructurales",
-      "Integración con bibliotecas de diseño como Angular Material o Bootstrap"
+      "Desarrollo de aplicaciones SPA escalables con arquitectura basada en componentes",
+      "Diseño de arquitecturas modulares y organización de funcionalidades por features",
+      "Gestión de estado reactivo mediante Signals y RxJS",
+      "Consumo e integración de APIs REST mediante HttpClient y servicios reutilizables",
+      "Implementación de routing, guards y lazy loading para gestionar navegación y acceso",
+      "Uso de inyección de dependencias para desacoplar y reutilizar lógica de negocio",
+      "Desarrollo de formularios reactivos con validaciones y manejo de estados",
+      "Creación de componentes, directivas y pipes reutilizables",
+      "Integración con librerías de UI como Bootstrap y Angular Material"
     ]
   },
   {
@@ -59,14 +74,15 @@
   {
     "title": "NodeJS",
     "description": [
-      "Desarrollo del lado del servidor utilizando JavaScript en entorno Node.js",
-      "Creación de APIs RESTful con Express.js",
-      "Manejo de rutas, middlewares y controladores",
-      "Conexión con bases de datos (MySQL, MongoDB) desde el backend",
-      "Uso de herramientas como Nodemon, dotenv y Postman",
-      "Gestión de dependencias y scripts mediante npm",
-      "Programación asincrónica con Promesas y async/await",
-      "Estructuración de proyectos backend de forma escalable y modular"
+      "Desarrollo de aplicaciones backend y APIs REST con Node.js y TypeScript",
+      "Diseño de arquitecturas modulares y separación de responsabilidades",
+      "Implementación de APIs con Express.js mediante rutas, controladores y middlewares",
+      "Integración con bases de datos relacionales y NoSQL",
+      "Implementación de autenticación, autorización y control de acceso",
+      "Programación asíncrona y manejo de operaciones concurrentes con async/await y Promises",
+      "Integración con servicios externos y APIs de terceros",
+      "Configuración de entornos y gestión de dependencias mediante npm",
+      "Diseño de servicios backend escalables y mantenibles"
     ]
   },
   {
