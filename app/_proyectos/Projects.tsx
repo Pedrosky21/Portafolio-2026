@@ -8,7 +8,7 @@ export default function ProjectsPage() {
         "Aplicación web de una cafetería ficticia. Hecha en Angular v19 implementa carrito, gestión de pedidos y autenticación.",
       description2:
         "Permite crear perfiles, buscar y unirse a partidos y reservar canchas. Los administradores de clubes pueden gestionar turnos y canchas y la organización interna del club.\nIncluye autenticación, administración de disponibilidad por parte de clubes y un panel para la gestión interna de turnos y reservas.",
-      imgSrc: "/ProyectoCrumbsBeans.jpg",
+      imgSrc: "/ProyectoCrumbsBeans.png",
       imgMobileSrc: "/ProyectoCrumbsBeansMobile.jpg",
       techs: ["Angular", "Bootstrap", "Supabase"],
       githubLink: "https://github.com/Pedrosky21/Crumbs-Beans",
@@ -65,7 +65,10 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <div id="proyectos" className="w-full flex flex-col items-center pt-20 pb-10">
+      <div
+        id="proyectos"
+        className="w-full flex flex-col items-center pt-20 pb-10"
+      >
         <div className="w-full px-6 max-w-[1500px]">
           <div className="w-full md:w-2/5">
             <h2 className="text-3xl md:text-5xl  text-background-blue">
@@ -73,9 +76,9 @@ export default function ProjectsPage() {
             </h2>
           </div>
           <p className="text-lg text-light-gray mt-5">
-              Proyectos destacables que reflejan mi crecimiento y las
-              habilidades que desarrollé en el proceso.
-            </p>
+            Proyectos destacables que reflejan mi crecimiento y las habilidades
+            que desarrollé en el proceso.
+          </p>
           <div className="mt-10 flex flex-col space-y-10 md:space-y-0 md:grid md:grid-cols-4 md:gap-20">
             {projects.map((proj, index) => (
               <div className="h-full" key={index}>

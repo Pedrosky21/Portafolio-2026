@@ -4,6 +4,7 @@ import ProjectsPage from "./_proyectos/Projects";
 import HeroPage from "./_hero/Hero";
 import AboutMePage from "./_sobre-mi/AboutMe";
 import TechStack from "./_tech-stack/TechStack";
+import GridExample from "./components/GridExample";
 
 export default function Home() {
   return (

@@ -51,20 +51,20 @@ export default function ProjectList({ projects, sendProjectIndex }: ProjectListP
   return (
     <>
       <div
-        className="relative overflow-x-hidden p-2 bg-white rounded-4xl w-full 2xl:w-6/9 h-[14.4rem]"
+        className="relative overflow-x-hidden p-2 bg-white rounded-4xl h-full w-full"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <div
           onTransitionEnd={handleTransitionEnd}
-          className={`flex items-start space-x-10 ease-out ${isTransitioning ? 'transition-transform duration-300' : ''}`}
+          className={`flex h-full w-full items-start space-x-10 ease-out ${isTransitioning ? 'transition-transform duration-300' : ''}`}
           style={{ transform: `translateX(-${currentIndex * 22.5}rem)` }}
         >
           {infiniteProjects.map((project, i) => (
-            <div key={i} className="flex flex-col items-center shrink-0">
+            <div key={i} className="flex flex-col h-full items-center shrink-0">
               <div
                 onClick={() => sendProjectIndex(i % projects.length)}
-                className="cursor-pointer"
+                className="cursor-pointer h-full"
               >
                 <ProjectCard
                   title={project.title}
@@ -78,12 +78,12 @@ export default function ProjectList({ projects, sendProjectIndex }: ProjectListP
           ))}
         </div>
 
-        <div className="absolute bottom-1.5 left-[37rem] -translate-x-1/2 flex space-x-2">
+        <div className="absolute bottom-1.5 left-2/3 -translate-x-1/2 flex space-x-2">
           {projects.map((_, dotIndex) => (
             <button
               key={dotIndex}
               onClick={() => handleDotClick(dotIndex)}
-              className={`cursor-pointer h-3 rounded-full transition-all duration-300 ${(currentIndex % projects.length) === dotIndex ? "w-8 bg-gray-600" : "w-3 bg-gray-400"
+              className={`cursor-pointer h-3 2xl:h-6 rounded-full transition-all duration-300 ${(currentIndex % projects.length) === dotIndex ? "w-8 2xl:w-16 bg-gray-600" : "w-3 2xl:w-6 bg-gray-400"
                 }`}
             ></button>
           ))}

@@ -11,18 +11,18 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ imageURL, title, techs, isSmall, disableTransition }: ProjectCardProps) {
   return (
-    <div className={`relative group bg-white rounded-4xl overflow-hidden ${isSmall ? 'w-80 h-48' : 'w-96 h-52'} hover:scale-105 ${disableTransition ? '' : 'transition-all duration-300'} shadow-sm hover:shadow-xl`}>
+    <div className={`relative group bg-white rounded-4xl overflow-hidden ${isSmall ? 'w-80 h-4/5' : 'w-[48dvh] h-full'} hover:scale-105 ${disableTransition ? '' : 'transition-all duration-300'} shadow-sm hover:shadow-xl`}>
       <div className="w-full h-full relative">
         <Image
           src={imageURL}
           alt={title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 768px) 100vw, 420px"
           className={`object-cover ${disableTransition ? '' : 'transition-all duration-700'} ${isSmall ? 'opacity-70 group-hover:opacity-100' : 'opacity-100 group-hover:scale-110'}`}
         />
         
         {/* Dark overlay that appears on hover for ALL cards */}
-        <div className={`absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}></div>
+        <div className={`absolute inset-0 z-10 bg-linear-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}></div>
         
         {/* Light overlay for small cards */}
         {isSmall && (
