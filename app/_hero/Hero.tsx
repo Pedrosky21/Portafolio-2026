@@ -188,6 +188,19 @@ export default function HeroPage() {
         },
       });
     };
+
+    useEffect(() => {
+      const words = document.querySelectorAll<HTMLElement>(".hero-role-word");
+      if (!words.length) return;
+
+      animate(words, {
+        opacity: [0, 1],
+        translateY: ["0.75rem", "0rem"],
+        duration: 700,
+        easing: "easeOutExpo",
+        delay: stagger(80),
+      });
+    }, []);
   
     return (
       <>
